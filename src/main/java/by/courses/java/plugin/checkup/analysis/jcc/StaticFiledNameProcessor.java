@@ -21,7 +21,7 @@ public class StaticFiledNameProcessor extends AbstractProcessor<CtField> {
 
   @Override
   public void process(CtField element) {
-    if (element.getParent(CtClass.class) != null && element.isStatic() && !pattern.matcher(element.getSimpleName()).find()) {
+    if (element.getParent(CtClass.class) != null && element.isStatic() && !element.isFinal() && !pattern.matcher(element.getSimpleName()).find()) {
       failStaticFiledNames.add(element);
     }
   }
