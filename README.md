@@ -1,0 +1,1 @@
+#courses-java-maven-plugin
